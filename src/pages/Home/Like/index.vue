@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: "like",
+  name: "HomeLike",
   data() {
     return {};
   },

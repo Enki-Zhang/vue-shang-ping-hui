@@ -9,22 +9,26 @@
     <Floor></Floor>
     <Floor></Floor>
     <Brand></Brand>
+    输入搜索的内容<input v-model="text" type="text" @input="onSearch()" />
+    <span>{{ count }}</span>
+    <button @click="add">加一</button>
   </div>
 </template>
 
 <script>
+import _ from "lodash";
 import ListContainer from "./ListContainer";
 import Recommend from "./Recommend";
 import Rank from "./Rank";
 import Like from "./Like";
 import Floor from "./Floor";
 import Brand from "./Brand";
-import { mapActions, mapState } from "vuex";
+import Index from "../../components/Footer/index.vue";
 
 export default {
-  name: "views-home",
+  name: "PagesHome",
   data() {
-    return {};
+    return { text: ``, count: 1 };
   },
   components: {
     ListContainer,
@@ -33,17 +37,30 @@ export default {
     Like,
     Floor,
     Brand,
+    Index,
   },
   computed: {
     // ...mapState([`count`]),
+    // ...mapState([`count`]), //E6简写形式 返回this.$store.state.count; 获取state中的数据
   },
   methods: {
     // action
     // ...mapActions([`add`]),
+    // ...mapMutations({ addCount: `ADD` }),
+    /*    add() {
+      this.$store.dispatch(`addCount`, this.count);
+    }, */
+    // ...mapMutations({ addCount: `ADD` }),//addCount 为action中的方法 ADD是commit的方法
+    // ...mapActions([`addCount`]), //dispatch 到action中的addCount
+    onSearch: _.debounce(function () {
+      console.log(`发送请求`);
+    }, 1000),
+    add: _.throttle(function () {
+      this.count++;
+      console.log(`节流执行`);
+    }, 10000),
   },
-  mounted() {
-    console.log(this.$route);
-  },
+  mounted() {},
 };
 </script>
 <style scoped></style>

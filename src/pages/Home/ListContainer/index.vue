@@ -102,7 +102,7 @@
 
 <script>
 export default {
-  name: "list-container",
+  name: "HomeListContainer",
   data() {
     return {};
   },

@@ -98,7 +98,7 @@
 
 <script>
 export default {
-  name: " ",
+  name: "HomeRank",
   data() {
     return {};
   },

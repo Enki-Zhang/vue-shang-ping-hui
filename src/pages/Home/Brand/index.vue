@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: "brand",
+  name: "HomeBrand",
   data() {
     return {};
   },

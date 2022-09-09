@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: "layout-header",
+  name: "LayoutHeader",
   data() {
     return {
       keyword: "",
@@ -78,10 +78,13 @@ export default {
       this.$router.push(
         {
           name: "search",
+          // path: "/search",
           params: {
+            // 替换掉路径的keyword path: "/search/:keyword",
             keyword: this.keyword,
           },
-          query: { k: this.keyword.toUpperCase() },
+          // 路径中添加？AS=keyword  path: /search/:keyword?(AS)...,
+          query: { AS: this.keyword.toUpperCase() },
         },
         (err) => console.log(err)
       );

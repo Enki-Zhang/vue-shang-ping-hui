@@ -95,7 +95,7 @@
 
 <script>
 export default {
-  name: " ",
+  name: "HomeFloor",
   data() {
     return {};
   },

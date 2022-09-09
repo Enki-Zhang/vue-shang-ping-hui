@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <router-view></router-view>
-    <Foot></Foot>
+    <Foot v-show="$route.meta.show"></Foot>
   </div>
 </template>
 
@@ -16,10 +16,7 @@ export default {
     Header,
     Foot,
   },
-  mounted() {
-    console.log(this.$router);
-    console.log(`这是App的route`, this.$route);
-  },
+  mounted() {},
 };
 </script>
 

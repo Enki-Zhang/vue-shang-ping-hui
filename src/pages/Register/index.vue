@@ -4,13 +4,11 @@
 
 <script>
 export default {
-  name: "pages-register",
+  name: "PagesRegister",
   data() {
     return {};
   },
-  mounted() {
-    console.log(`这是register里面的route`, this.$route);
-  },
+  mounted() {},
 };
 </script>
 <style scoped></style>

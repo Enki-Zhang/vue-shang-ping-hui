@@ -106,7 +106,7 @@
 
 <script>
 export default {
-  name: "layout_footer",
+  name: "LayoutFooter",
   data() {
     return {};
   },
